@@ -14,6 +14,7 @@ import pageObjects.ProductsPage;
 import support.drivers.DriverType;
 import support.utils.DriverUtils;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import static support.utils.DriverUtils.initExtentReport;
@@ -198,6 +199,111 @@ public class SwagLabSteps {
             Assert.assertEquals("Sauce Labs Backpack", checkoutPage.getProductOnCartName().getText());
             Assert.assertTrue(true);
             DriverUtils.getExtentTest().pass("Products find on Cart successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+
+    @When("clico no botão Checkout")
+    public void clico_no_botão_checkout() throws Exception{
+        try {
+            DriverUtils.waitAndClickElement(checkoutPage.getCheckoutButton());
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Clicked on Checkout Button completed", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+
+    @When("preencho a informação de first name {string}")
+    public void preencho_a_informação_de_first_name(String firstName) throws Exception {
+        try {
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getFirstNameInput());
+            DriverUtils.sendKeysToWebElement(checkoutPage.getFirstNameInput(), firstName);
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Set First Name successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @When("preencho a informação de Last Name {string}")
+    public void preencho_a_informação_de_last_name(String lastName) throws Exception {
+        try {
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getLastNameInput());
+            DriverUtils.sendKeysToWebElement(checkoutPage.getLastNameInput(), lastName);
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Set lastName successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @When("preencho a informação Zip-Code'{int}'")
+    public void preencho_a_informação_zip_code(Integer zipCode) throws Exception {
+        try {
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getZipCodeInput());
+            DriverUtils.sendKeysToWebElement(checkoutPage.getZipCodeInput(), String.valueOf(zipCode));
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Set zipCode successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @When("clico no botão Continue")
+    public void clico_no_botão_continue() throws IOException, InterruptedException {
+        try {
+            DriverUtils.waitAndClickElement(checkoutPage.getContinueButton());
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Clicked on Continue Button completed", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @When("sou capaz de visualizar o Checkout Overview com todas as informações da minha compra")
+    public void sou_capaz_de_visualizar_o_checkout_overview_com_todas_as_informações_da_minha_compra() throws IOException {
+        try {
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getCheckoutOverviewText());
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getProductOnCartName());
+            Assert.assertTrue(true);
+            Assert.assertEquals("Checkout: Overview", checkoutPage.getCheckoutOverviewText().getText());
+            Assert.assertEquals("Sauce Labs Backpack",checkoutPage.getProductOnCartName().getText());
+            DriverUtils.getExtentTest().pass("Checkout Overview page loaded successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @When("clico em Finish")
+    public void clico_em_finish() throws IOException, InterruptedException {
+        try {
+            DriverUtils.waitAndClickElement(checkoutPage.getFinishButton());
+            Assert.assertTrue(true);
+            DriverUtils.getExtentTest().pass("Clicked on Finish Button completed", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
+
+        } catch (Exception ex) {
+            DriverUtils.getExtentTest().fail(ex);
+            throw ex;
+        }
+    }
+    @Then("Sou capaz de visualizar a mensagem de finalização de compra.")
+    public void sou_capaz_de_visualizar_a_mensagem_de_finalização_de_compra() throws IOException {
+        try {
+            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getFinishOrderMessage());
+            Assert.assertTrue(true);
+            Assert.assertEquals("Thank you for your order!",checkoutPage.getFinishOrderMessage().getText());
+            DriverUtils.getExtentTest().pass("Finish Order item successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
 
         } catch (Exception ex) {
             DriverUtils.getExtentTest().fail(ex);

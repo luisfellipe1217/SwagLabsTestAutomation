@@ -1,6 +1,6 @@
 Feature: Validar Login site SwagLabs
 
-  @Test
+  @TestLogin
   Scenario: Validar Login SwagLabs
     Given Teste: 'Validar Login site SwagLabs'
     Given Que eu esteja usando o navegador 'CHROME'
