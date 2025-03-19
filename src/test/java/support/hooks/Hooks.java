@@ -34,16 +34,6 @@ public class Hooks {
             extendReporter.flush();
             driver.manage().deleteAllCookies();
             driver.quit();
-            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
-            if (Hooks.getRunningDriver() == DriverType.CHROME)
-                TaskManagerUtils.killProcess("chromedriver.exe");
-
-            if (getRunningDriver() == DriverType.CHROME) {
-                TaskManagerUtils.killProcess("chromedriver.exe");
-            } else if (getRunningDriver() == DriverType.FIREFOX) {
-                TaskManagerUtils.killProcess("firefox.exe");
-                TaskManagerUtils.killProcess("geckodriver.exe");
-            }
         } catch (Exception e) {
             System.out.println("Methods Failed: tearDown, Exception: " + e.getMessage());
             e.printStackTrace();
