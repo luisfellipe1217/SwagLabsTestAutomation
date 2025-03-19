@@ -31,3 +31,9 @@ jobs:
           
       - name: Run Selenium Tests
         run: mvn clean test
+
+      - name: Upload Extent Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: extent-report
+          path: test-output/testReport.html
