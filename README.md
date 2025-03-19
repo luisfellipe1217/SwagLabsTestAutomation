@@ -73,7 +73,7 @@ A configuração da pipeline está no arquivo:
 ## 📊 Relatórios de Execução
 Após a execução dos testes, um relatório em HTML será gerado na pasta:
 ```
-target/
+test-output/TestReport
 ```
 Para visualizar, abra o arquivo no navegador.
 
