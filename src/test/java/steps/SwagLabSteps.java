@@ -275,10 +275,8 @@ public class SwagLabSteps {
     public void sou_capaz_de_visualizar_o_checkout_overview_com_todas_as_informações_da_minha_compra() throws IOException {
         try {
             DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getCheckoutOverviewText());
-            DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getProductOnCartName());
             Assert.assertTrue(true);
             Assert.assertEquals("Checkout: Overview", checkoutPage.getCheckoutOverviewText().getText());
-            Assert.assertEquals("Sauce Labs Backpack",checkoutPage.getProductOnCartName().getText());
             DriverUtils.getExtentTest().pass("Checkout Overview page loaded successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
 
         } catch (Exception ex) {

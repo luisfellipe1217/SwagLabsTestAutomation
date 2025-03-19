@@ -11,7 +11,7 @@ public class CheckoutPage {
         PageFactory.initElements(SwagLabSteps.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@id='item_4_title_link']/div")
+    @FindBy(xpath = "//*[@id='item_4_title_link']/div")
     WebElement productOnCartName;
 
     @FindBy(xpath = "//*[@id='remove-sauce-labs-backpack']")
