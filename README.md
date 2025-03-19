@@ -44,8 +44,8 @@ AutomacaoAgi/
 3. **Instalar o Google Chrome e o ChromeDriver** (caso esteja rodando localmente)
 4. **Clonar o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/AutomacaoAgi.git
-   cd AutomacaoAgi
+   git clone https://github.com/seu-usuario/SwagLabsTestAutomation.git
+   cd SwagLabsTestAutomation
    ```
 5. **Executar os testes localmente**:
    ```bash
@@ -73,7 +73,7 @@ A configuração da pipeline está no arquivo:
 ## 📊 Relatórios de Execução
 Após a execução dos testes, um relatório em HTML será gerado na pasta:
 ```
-test-output/TestReport
+test-output/testReport.html
 ```
 Para visualizar, abra o arquivo no navegador.
 
@@ -84,7 +84,8 @@ Para visualizar, abra o arquivo no navegador.
 O GitHub Actions está configurado para:
 - Instalar dependências
 - Executar os testes automaticamente
-
+- Publicar o relatório de execução nos artifacts
+  
 ## 📌 Contato
 Caso tenha dúvidas ou sugestões, entre em contato.
 
