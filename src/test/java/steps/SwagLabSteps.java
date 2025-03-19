@@ -198,6 +198,7 @@ public class SwagLabSteps {
             DriverUtils.WaitUntilWebElementIsVisible(checkoutPage.getProductOnCartName());
             Assert.assertEquals("Sauce Labs Backpack", checkoutPage.getProductOnCartName().getText());
             Assert.assertTrue(true);
+            DriverUtils.waitAndClickElement(checkoutPage.getRemoveProductCartButton());
             DriverUtils.getExtentTest().pass("Products find on Cart successfully", MediaEntityBuilder.createScreenCaptureFromPath(DriverUtils.getScreentShotExtentPath()).build());
 
         } catch (Exception ex) {

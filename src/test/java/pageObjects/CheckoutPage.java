@@ -14,6 +14,9 @@ public class CheckoutPage {
     @FindBy(xpath = "//a[@id='item_4_title_link']/div")
     WebElement productOnCartName;
 
+    @FindBy(xpath = "//*[@id='remove-sauce-labs-backpack']")
+    WebElement removeProductCartButton;
+
     @FindBy(xpath = "//*[@id='checkout']")
     WebElement checkoutButton;
 
@@ -41,6 +44,10 @@ public class CheckoutPage {
 
     public WebElement getProductOnCartName() {
         return productOnCartName;
+    }
+
+    public WebElement getRemoveProductCartButton(){
+        return removeProductCartButton;
     }
 
     public WebElement getCheckoutButton(){
