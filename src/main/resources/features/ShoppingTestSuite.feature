@@ -1,7 +1,7 @@
 Feature: Validar compras utilizando o SwagLabs
 
   Background:
-    Given Teste: 'Validar Login site SwagLabs'
+    Given Teste: 'Realizar Login site SwagLabs'
     Given Que eu esteja usando o navegador 'CHROME'
     And Eu acesso o site SwagLabs
     When Eu insiro o UserName: "standard_user"
