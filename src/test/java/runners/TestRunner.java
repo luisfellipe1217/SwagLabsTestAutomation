@@ -14,7 +14,7 @@ import support.hooks.Hooks;
 import java.io.IOException;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/resources/features"}, glue = "steps")
+@CucumberOptions(features = {"src/main/resources/features"}, glue = "steps")
 public class TestRunner extends AbstractTestNGCucumberTests {
     private static final Logger logger = LogManager.getLogger(TestRunner.class);
 
